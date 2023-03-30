@@ -294,51 +294,87 @@ const MainBody = () => {
         </p>
         {/* dropdown */}
         <div className="flex ml-6 mt-6">
-        <select name="cars" id="cars" className="w-64 p-2 rounded ">
-          <option value="volvo">January 2022</option>
-          <option value="saab">Saab</option>
-        </select>
-        <input type="text" placeholder="Description" name="" id="" className="border rounded p-1.5 w-full ml-7" />
+          <select name="cars" id="cars" className="w-64 p-2 rounded ">
+            <option value="volvo">January 2022</option>
+            <option value="saab">Saab</option>
+          </select>
+          <input
+            type="text"
+            placeholder="Description"
+            name=""
+            id=""
+            className="border rounded p-1.5 w-full ml-7"
+          />
         </div>
         {/* dropdown */}
         <div className="flex ml-6 mt-6">
-        <select name="cars" id="cars" className="w-64 p-2 rounded ">
-          <option value="volvo">January 2022</option>
-          <option value="saab">Saab</option>
-        </select>
-        <input type="text" placeholder="Description" name="" id="" className="border rounded p-1.5 w-full ml-7" />
+          <select name="cars" id="cars" className="w-64 p-2 rounded ">
+            <option value="volvo">January 2022</option>
+            <option value="saab">Saab</option>
+          </select>
+          <input
+            type="text"
+            placeholder="Description"
+            name=""
+            id=""
+            className="border rounded p-1.5 w-full ml-7"
+          />
         </div>
         {/* dropdown */}
         <div className="flex ml-6 mt-6">
-        <select name="cars" id="cars" className="w-64 p-2 rounded ">
-          <option value="volvo">January 2022</option>
-          <option value="saab">Saab</option>
-        </select>
-        <input type="text" placeholder="Description" name="" id="" className="border rounded p-1.5 w-full ml-7" />
+          <select name="cars" id="cars" className="w-64 p-2 rounded ">
+            <option value="volvo">January 2022</option>
+            <option value="saab">Saab</option>
+          </select>
+          <input
+            type="text"
+            placeholder="Description"
+            name=""
+            id=""
+            className="border rounded p-1.5 w-full ml-7"
+          />
         </div>
         {/* dropdown */}
         <div className="flex ml-6 mt-6">
-        <select name="cars" id="cars" className="w-64 p-2 rounded ">
-          <option value="volvo">January 2022</option>
-          <option value="saab">Saab</option>
-        </select>
-        <input type="text" placeholder="Description" name="" id="" className="border rounded p-1.5 w-full ml-7" />
+          <select name="cars" id="cars" className="w-64 p-2 rounded ">
+            <option value="volvo">January 2022</option>
+            <option value="saab">Saab</option>
+          </select>
+          <input
+            type="text"
+            placeholder="Description"
+            name=""
+            id=""
+            className="border rounded p-1.5 w-full ml-7"
+          />
         </div>
         {/* dropdown */}
         <div className="flex ml-6 mt-6">
-        <select name="cars" id="cars" className="w-64 p-2 rounded ">
-          <option value="volvo">January 2022</option>
-          <option value="saab">Saab</option>
-        </select>
-        <input type="text" placeholder="Description" name="" id="" className="border rounded p-1.5 w-full ml-7" />
+          <select name="cars" id="cars" className="w-64 p-2 rounded ">
+            <option value="volvo">January 2022</option>
+            <option value="saab">Saab</option>
+          </select>
+          <input
+            type="text"
+            placeholder="Description"
+            name=""
+            id=""
+            className="border rounded p-1.5 w-full ml-7"
+          />
         </div>
         {/* dropdown */}
         <div className="flex ml-6 mt-6 mb-7">
-        <select name="cars" id="cars" className="w-64 p-2 rounded ">
-          <option value="volvo">January 2022</option>
-          <option value="saab">Saab</option>
-        </select>
-        <input type="text" placeholder="Description" name="" id="" className="border rounded p-1.5 w-full ml-7" />
+          <select name="cars" id="cars" className="w-64 p-2 rounded ">
+            <option value="volvo">January 2022</option>
+            <option value="saab">Saab</option>
+          </select>
+          <input
+            type="text"
+            placeholder="Description"
+            name=""
+            id=""
+            className="border rounded p-1.5 w-full ml-7"
+          />
         </div>
         <label className="font-semibold ml-7">Comments</label>
         <textarea
@@ -348,10 +384,46 @@ const MainBody = () => {
           placeholder="Write your comment here..."
         ></textarea>
         <div className=" ml-7 mt-2 flex justify-between text-xs">
-          <div className="flex w-1/2">
-          </div>
+          <div className="flex w-1/2"></div>
           <p className="text-[#6B7280]">Maximum 1000 character</p>
         </div>
+      </div>
+
+      {/* Reporting period */}
+      <div className="bg-white px-6 py-8 mx-3 rounded drop-shadow-sm ">
+        <div className="flex">
+          <div className="bg-[#4DA467] rounded-full px-1.5 text-white">
+            <h2>4</h2>
+          </div>
+          <h2 className="px-2 font-bold">
+            Does the reporting period for organization's financial reporting
+            align with the period for its sustainability reporting. Please
+            select one option: <span className="text-[#E02424]">*</span>
+          </h2>
+          <div>
+          </div>
+        </div>
+          <div className="ml-7 mt-6 y-space-8 mb-4">
+          <input type="radio" id="html" name="fav_language" value="HTML" className="mr-2" />
+          <label for="html">Yes</label><br/>
+          <input type="radio" id="html" name="fav_language" value="HTML" className="mr-2" />
+          <label for="html">No</label>
+          </div>
+          <label className="font-semibold ml-7">Please explain the reason</label>
+        <textarea
+          id="message"
+          rows="4"
+          className=" mx-7 mt-5 block p-2.5 w-[64rem] text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Write your comment here..."
+        ></textarea>
+         <div className=" ml-7 mt-2 flex justify-between text-xs">
+          <div className="flex w-1/2"></div>
+          <p className="text-[#6B7280]">Maximum 1000 character</p>
+        </div>
+      </div>
+      <div className="flex justify-end my-3 mr-9">
+        <button className="border border-black rounded px-5 py-1.5 mr-7">Cancel</button>
+        <button className="rounded px-7 py-1.5 bg-[#BEC2C9]">Save</button>
       </div>
     </div>
   );
