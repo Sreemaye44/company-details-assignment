@@ -6,21 +6,21 @@ import users from '../../assets/users.svg';
 
 const Dashboard = () => {
     return (
-        <div className='w-2/12 min-h-screen bg-[#494F58] text-white p-5 font-semibold text-sm space-y-6'>
+        <div className='w-2/12 min-h-screen bg-[#494F58] border-t-[1px] border-gray-500  text-white p-5 font-semibold text-base space-y-6'>
            <div className='flex'>
-               <img src={pie} alt="" srcset="" />
+               <img src={pie} alt="" srcset="" className='h-6 w-6' />
                <h2 className='ml-3.5'>Reporting Cycle </h2>
            </div>
            <div className='flex'>
-               <img src={document} alt="" srcset="" />
+               <img src={document} alt="" srcset="" className='h-6 w-6'/>
                <h2 className='ml-3.5'>Dashboard </h2>
            </div>
            <div className='flex'>
-               <img src={sidebar} alt="" srcset="" />
+               <img src={sidebar} alt="" srcset="" className='h-6 w-6' />
                <h2 className='ml-3.5'>About us </h2>
            </div>
            <div className='flex'>
-               <img src={users} alt="" srcset="" />
+               <img src={users} alt="" srcset="" className='h-6 w-6'/>
                <h2 className='ml-3.5'>User Management </h2>
            </div>
         
