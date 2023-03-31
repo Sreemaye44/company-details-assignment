@@ -13,10 +13,6 @@ code .
 npm start
 ```
 
-## Demo link
-
-Access my site at 
-
 
 ## Technologies
 
@@ -24,6 +20,6 @@ I used React JS, React Router DOM, Tailwind CSS
 
 ## Setup
 
-"*" download or clone the repository
-"*" run npm install
-"*" run npm start
+- download or clone the repository
+- run npm install
+- run npm start
