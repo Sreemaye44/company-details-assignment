@@ -13,6 +13,9 @@ code .
 npm start
 ```
 
+## Site Overview
+
+Have a look of my site https://cozy-dasik-a0d78e.netlify.app/
 
 ## Technologies
 
