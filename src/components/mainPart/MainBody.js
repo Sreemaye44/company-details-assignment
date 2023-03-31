@@ -1,14 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import freeText from "../../assets/freetext.svg";
 
 const MainBody = () => {
-
+  const [selectedOption, setSelectedOption] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = e.target;
-    const description = formData.description.value;
-    const explain = formData.explain.value;
-    console.log(description, explain);
+    const formData = e.target.elements;
+    for (let i = 0; i < formData.length; i++) {
+      if (formData[i].name !== "" && formData[i].name !== "selectOne") {
+        
+        console.log(formData[i].name + ' = '+formData[i].value);
+      }
+  
+      
+    }
+    console.log(selectedOption);
+    //formData.foreach(e => console.log(e.name));
+    //console.log(formData);
+    // description data collect
+  //   const description = formData.description.value;
+  //   //performance indicator data collect
+  //   const totalEmployee = formData.totalEmployee.value;
+  //   const customer = formData.customer.value;
+  //   const growthRate = formData.growthRate.value;
+  //   const industriesServed = formData.industriesServed.value;
+  //   const revenue = formData.revenue.value;
+  //   const turnover = formData.turnover.value;
+  //  // const ebidata = formData.ebidata.value;
+  //   const womenManagement = formData.womenManagement.value;
+  //   const revenuePerEmployee = formData.revenuePerEmployee.value;
+  //   const training = formData.training.value;
+  //   const soldProduct = formData.soldProduct.value;
+  //   const facilities = formData.facilities.value;
+  //   const shareRevenue = formData.shareRevenue.value;
+  //   //key company events
+  //   const event_1 = formData.event_1.value;
+  //   const event_2 = formData.event_2.value;
+  //   const event_3 = formData.event_3.value;
+  //   const event_4 = formData.event_4.value;
+  //   const event_5 = formData.event_5.value;
+  //   const event_6 = formData.event_6.value;
+
+  //   const des_1 = formData.des_1.value;
+  //   const des_2 = formData.des_2.value;
+  //   const des_3 = formData.des_3.value;
+  //   const des_4= formData.des_4.value;
+  //   const des_5 = formData.des_5.value;
+  //   const des_6 = formData.des_6.value;
+
+  //   const comments = formData.comments.value;
+
+  //   const yes = formData.yes.value;
+  //   const no = formData.no.value;
+    
+
+
+
+
+  //   const explain = formData.explain.value;
+  //  // console.log(description, totalEmployee, customer, growthRate,industriesServed,revenue,turnover, ebidata,womenManagement, revenuePerEmployee,training, soldProduct, facilities, shareRevenue, explain );
+  //   console.log(formData);
   }
   return (
     <form className="w-10/12 py-4 bg-slate-100 text-sm" onSubmit={handleSubmit}>
@@ -75,13 +126,14 @@ const MainBody = () => {
             <input
               type="text"
               value="Total Employee"
-              className="border rounded p-2 ml-2 w-52 bg-slate-100 font-semibold text-[#494F58] "
+              className="border rounded p-3 ml-5 w-64 bg-slate-100 font-semibold text-[#494F58] "
               readOnly
             />
             <input
               type="text"
               placeholder="500"
-              className="border rounded p-2 ml-2 bg-slate-100 font-semibold text-[#494F58] w-52 "
+              name="totalEmployee"
+              className="border rounded p-3 ml-5 bg-slate-100 font-semibold text-[#494F58] w-64 "
             />
           </div>
           <div>
@@ -89,13 +141,14 @@ const MainBody = () => {
             <input
               type="text"
               value="Customer in Countries"
-              className="border rounded p-2 ml-2 bg-slate-100 font-semibold text-[#494F58] w-52"
+              className="border rounded p-3 ml-5 bg-slate-100 font-semibold text-[#494F58] w-64"
               readOnly
             />
             <input
               type="text"
               placeholder="500"
-              className="border rounded p-2 ml-2 bg-slate-100 font-semibold text-[#494F58] w-52"
+              name="customer"
+              className="border rounded p-3 ml-5 bg-slate-100 font-semibold text-[#494F58] w-64"
             />
           </div>
         </div>
@@ -106,13 +159,14 @@ const MainBody = () => {
             <input
               type="text"
               value="Yearly Sales Growth rate"
-              className="border rounded p-2 ml-2 w-52 bg-slate-100 font-semibold text-[#494F58] "
+              className="border rounded p-3 ml-5 w-64 bg-slate-100 font-semibold text-[#494F58] "
               readOnly
             />
             <input
               type="text"
-              placeholder="500"
-              className="border rounded p-2 ml-2 bg-slate-100 font-semibold text-[#494F58] w-52 "
+              placeholder="50%"
+              name="growthRate"
+              className="border rounded p-3 ml-5 bg-slate-100 font-semibold text-[#494F58] w-64 "
             />
           </div>
           <div>
@@ -120,13 +174,14 @@ const MainBody = () => {
             <input
               type="text"
               value="Industries served"
-              className="border rounded p-2 ml-2 bg-slate-100 font-semibold text-[#494F58] w-52"
+              className="border rounded p-3 ml-5 bg-slate-100 font-semibold text-[#494F58] w-64"
               readOnly
             />
             <input
               type="text"
               placeholder="500"
-              className="border rounded p-2 ml-2 bg-slate-100 font-semibold text-[#494F58] w-52"
+              name="industriesServed"
+              className="border rounded p-3 ml-5 bg-slate-100 font-semibold text-[#494F58] w-64"
             />
           </div>
         </div>
@@ -137,58 +192,29 @@ const MainBody = () => {
             <input
               type="text"
               value="Revenue"
-              className="border rounded p-2 ml-2 w-52 bg-slate-100 font-semibold text-[#494F58] "
+              className="border rounded p-3 ml-5 w-64 bg-slate-100 font-semibold text-[#494F58] "
               readOnly
             />
             <input
               type="text"
-              placeholder="500"
-              className="border rounded p-2 ml-2 bg-slate-100 font-semibold text-[#494F58] w-52 "
+              placeholder="5000 MEur"
+              name="revenue"
+              className="border rounded p-3 ml-5 bg-slate-100 font-semibold text-[#494F58] w-64 "
             />
           </div>
           <div>
             <input type="checkbox" className="rounded-full" />
             <input
               type="text"
-              value="Total Employee"
-              className="border rounded p-2 ml-2 bg-slate-100 font-semibold text-[#494F58] w-52"
+              value="Employee Turnover"
+              className="border rounded p-3 ml-5 bg-slate-100 font-semibold text-[#494F58] w-64"
               readOnly
             />
             <input
               type="text"
-              placeholder="500"
-              className="border rounded p-2 ml-2 bg-slate-100 font-semibold text-[#494F58] w-52"
-            />
-          </div>
-        </div>
-        {/* input fields */}
-        <div className="flex justify-between mt-6 mx-6">
-          <div>
-            <input type="checkbox" className="rounded-full" />
-            <input
-              type="text"
-              value="Total Employee"
-              className="border rounded p-2 ml-2 w-52 bg-slate-100 font-semibold text-[#494F58] "
-              readOnly
-            />
-            <input
-              type="text"
-              placeholder="500"
-              className="border rounded p-2 ml-2 bg-slate-100 font-semibold text-[#494F58] w-52 "
-            />
-          </div>
-          <div>
-            <input type="checkbox" className="rounded-full" />
-            <input
-              type="text"
-              value="Total Employee"
-              className="border rounded p-2 ml-2 bg-slate-100 font-semibold text-[#494F58] w-52"
-              readOnly
-            />
-            <input
-              type="text"
-              placeholder="500"
-              className="border rounded p-2 ml-2 bg-slate-100 font-semibold text-[#494F58] w-52"
+              placeholder="50%"
+              name="turnover"
+              className="border rounded p-3 ml-5 bg-slate-100 font-semibold text-[#494F58] w-64"
             />
           </div>
         </div>
@@ -198,59 +224,30 @@ const MainBody = () => {
             <input type="checkbox" className="rounded-full" />
             <input
               type="text"
-              value="Total Employee"
-              className="border rounded p-2 ml-2 w-52 bg-slate-100 font-semibold text-[#494F58] "
+              value="EBITDA"
+              className="border rounded p-3 ml-5 w-64 bg-slate-100 font-semibold text-[#494F58] "
               readOnly
             />
             <input
               type="text"
-              placeholder="500"
-              className="border rounded p-2 ml-2 bg-slate-100 font-semibold text-[#494F58] w-52 "
+              placeholder="500MEur"
+              name="ebitda"
+              className="border rounded p-3 ml-5 bg-slate-100 font-semibold text-[#494F58] w-64 "
             />
           </div>
           <div>
             <input type="checkbox" className="rounded-full" />
             <input
               type="text"
-              value="Total Employee"
-              className="border rounded p-2 ml-2 bg-slate-100 font-semibold text-[#494F58] w-52"
+              value="Women in Management"
+              className="border rounded p-3 ml-5 bg-slate-100 font-semibold text-[#494F58] w-64"
               readOnly
             />
             <input
               type="text"
-              placeholder="500"
-              className="border rounded p-2 ml-2 bg-slate-100 font-semibold text-[#494F58] w-52"
-            />
-          </div>
-        </div>
-        {/* input fields */}
-        <div className="flex justify-between mt-6 mx-6">
-          <div>
-            <input type="checkbox" className="rounded-full" />
-            <input
-              type="text"
-              value="Total Employee"
-              className="border rounded p-2 ml-2 w-52 bg-slate-100 font-semibold text-[#494F58] "
-              readOnly
-            />
-            <input
-              type="text"
-              placeholder="500"
-              className="border rounded p-2 ml-2 bg-slate-100 font-semibold text-[#494F58] w-52 "
-            />
-          </div>
-          <div>
-            <input type="checkbox" className="rounded-full" />
-            <input
-              type="text"
-              value="Total Employee"
-              className="border rounded p-2 ml-2 bg-slate-100 font-semibold text-[#494F58] w-52"
-              readOnly
-            />
-            <input
-              type="text"
-              placeholder="500"
-              className="border rounded p-2 ml-2 bg-slate-100 font-semibold text-[#494F58] w-52"
+              placeholder="50%"
+              name="womenManagement"
+              className="border rounded p-3 ml-5 bg-slate-100 font-semibold text-[#494F58] w-64"
             />
           </div>
         </div>
@@ -260,28 +257,95 @@ const MainBody = () => {
             <input type="checkbox" className="rounded-full" />
             <input
               type="text"
-              value="Total Employee"
-              className="border rounded p-2 ml-2 w-52 bg-slate-100 font-semibold text-[#494F58] "
+              value="Revenue per Employee"
+              className="border rounded p-3 ml-5 w-64 bg-slate-100 font-semibold text-[#494F58] "
               readOnly
             />
             <input
               type="text"
-              placeholder="500"
-              className="border rounded p-2 ml-2 bg-slate-100 font-semibold text-[#494F58] w-52 "
+              placeholder="500MEur"
+              name="revenuePerEmployee"
+              className="border rounded p-3 ml-5 bg-slate-100 font-semibold text-[#494F58] w-64 "
             />
           </div>
           <div>
             <input type="checkbox" className="rounded-full" />
             <input
               type="text"
-              value="Others"
-              className="border rounded p-2 ml-2 bg-slate-100 font-semibold text-[#494F58] w-52"
+              value="In staff training"
+              className="border rounded p-3 ml-5 bg-slate-100 font-semibold text-[#494F58] w-64"
+              readOnly
+            />
+            <input
+              type="text"
+              placeholder="500Hrs"
+              name="training"
+              className="border rounded p-3 ml-5 bg-slate-100 font-semibold text-[#494F58] w-64"
+            />
+          </div>
+        </div>
+        {/* input fields */}
+        <div className="flex justify-between mt-6 mx-6">
+          <div>
+            <input type="checkbox" className="rounded-full" />
+            <input
+              type="text"
+              value="Product Sold"
+              className="border rounded p-3 ml-5 w-64 bg-slate-100 font-semibold text-[#494F58] "
+              readOnly
+            />
+            <input
+              type="text"
+              placeholder="50000"
+              name="soldProduct"
+              className="border rounded p-3 ml-5 bg-slate-100 font-semibold text-[#494F58] w-64 "
+            />
+          </div>
+          <div>
+            <input type="checkbox" className="rounded-full" />
+            <input
+              type="text"
+              value="Work-related facilities"
+              className="border rounded p-3 ml-5 bg-slate-100 font-semibold text-[#494F58] w-64"
+              readOnly
+            />
+            <input
+              type="text"
+              placeholder="50%"
+              name="facilities"
+              className="border rounded p-3 ml-5 bg-slate-100 font-semibold text-[#494F58] w-64"
+            />
+          </div>
+        </div>
+        {/* input fields */}
+        <div className="flex justify-between mt-6 mx-6">
+          <div>
+            <input type="checkbox" className="rounded-full" />
+            <input
+              type="text"
+              value="Share of export in revenue"
+              className="border rounded p-3 ml-5 w-64 bg-slate-100 font-semibold text-[#494F58] "
+              readOnly
+            />
+            <input
+              type="text"
+              placeholder="50%"
+              name="shareRevenue"
+              className="border rounded p-3 ml-5 bg-slate-100 font-semibold text-[#494F58] w-64 "
+            />
+          </div>
+          <div>
+            <input type="checkbox" className="rounded-full" />
+            <input
+              type="text"
+              value="Other"
+              className="border rounded p-3 ml-5 bg-slate-100 font-semibold text-[#494F58] w-64"
               readOnly
             />
             <input
               type="text"
               value=""
-              className=" rounded p-2 ml-2 font-semibold text-[#494F58] w-52"
+              className=" rounded p-3 ml-5 font-semibold text-[#494F58] w-64"
               readOnly
             />
           </div>
@@ -304,84 +368,84 @@ const MainBody = () => {
         </p>
         {/* dropdown */}
         <div className="flex mx-6 mt-6">
-          <select name="cars" id="cars" className="w-64 p-2 bg-gray-100 font-semibold border rounded ">
-            <option value="volvo">January 2022</option>
+          <select name="event_1" id="cars" className="w-64 p-2 bg-gray-100 font-semibold border rounded ">
+            <option value="January 2022">January 2022</option>
             <option value="saab">Saab</option>
           </select>
           <input
             type="text"
             placeholder="Description"
-            name=""
+            name="des_1"
             id=""
             className="border rounded p-1.5 w-full ml-7"
           />
         </div>
         {/* dropdown */}
         <div className="flex mx-6 mt-6">
-          <select name="cars" id="cars" className="w-64 p-2 bg-gray-100 font-semibold border rounded ">
-            <option value="volvo">January 2022</option>
+          <select name="event_2" id="cars" className="w-64 p-2 bg-gray-100 font-semibold border rounded ">
+            <option value="January 2022">January 2022</option>
             <option value="saab">Saab</option>
           </select>
           <input
             type="text"
             placeholder="Description"
-            name=""
+            name="des_2"
             id=""
             className="border rounded p-1.5 w-full ml-7"
           />
         </div>
         {/* dropdown */}
         <div className="flex mx-6 mt-6">
-          <select name="cars" id="cars" className="w-64 p-2 bg-gray-100 font-semibold border rounded ">
-            <option value="volvo">January 2022</option>
+          <select name="event_3" id="cars" className="w-64 p-2 bg-gray-100 font-semibold border rounded ">
+            <option value="January 2022">January 2022</option>
             <option value="saab">Saab</option>
           </select>
           <input
             type="text"
             placeholder="Description"
-            name=""
+            name="des_3"
             id=""
             className="border rounded p-1.5 w-full ml-7"
           />
         </div>
         {/* dropdown */}
         <div className="flex mx-6 mt-6">
-          <select name="cars" id="cars" className="w-64 p-2 bg-gray-100 font-semibold border rounded ">
-            <option value="volvo">January 2022</option>
+          <select name="event_4" id="cars" className="w-64 p-2 bg-gray-100 font-semibold border rounded ">
+            <option value="January 2022">January 2022</option>
             <option value="saab">Saab</option>
           </select>
           <input
             type="text"
             placeholder="Description"
-            name=""
+            name="des_4"
             id=""
             className="border rounded p-1.5 w-full ml-7"
           />
         </div>
         {/* dropdown */}
         <div className="flex mx-6 mt-6">
-          <select name="cars" id="cars" className="w-64 p-2 bg-gray-100 font-semibold border rounded ">
-            <option value="volvo">January 2022</option>
+          <select name="event_5" id="cars" className="w-64 p-2 bg-gray-100 font-semibold border rounded ">
+            <option value="January 2022">January 2022</option>
             <option value="saab">Saab</option>
           </select>
           <input
             type="text"
             placeholder="Description"
-            name=""
+            name="des_5"
             id=""
             className="border rounded p-1.5 w-full ml-7"
           />
         </div>
         {/* dropdown */}
         <div className="flex mx-6 mt-6 mb-7">
-          <select name="cars" id="cars" className="w-64 p-2 bg-gray-100 font-semibold border rounded ">
-            <option value="volvo">January 2022</option>
+          <select name="event_6" id="cars" className="w-64 p-2 bg-gray-100 font-semibold border rounded ">
+            <option value="January 2022">January 2022</option>
             <option value="saab">Saab</option>
           </select>
           <input
             type="text"
             placeholder="Description"
-            name=""
+            name="des_6"
             id=""
             className="border rounded p-1.5 w-full ml-7"
           />
@@ -391,6 +455,7 @@ const MainBody = () => {
           <textarea
             id="message"
             rows="4"
+            name="comments"
             className="mt-4 mb-2 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Write your comment here..."
             ></textarea>
@@ -416,9 +481,9 @@ const MainBody = () => {
           </div>
         </div>
           <div className="ml-7 mt-6 y-space-8 mb-4">
-          <input type="radio" id="html" name="fav_language" value="HTML" className="mr-2" />
+          <input type="radio" value="yes" checked={selectedOption === "yes"} name="selectOne" onChange={(event) => setSelectedOption(event.target.value)} className="mr-2"  />
           <label for="html">Yes</label><br/>
-          <input type="radio" id="html" name="fav_language" value="HTML" className="mr-2" />
+          <input type="radio" value="no" checked={selectedOption === "no"} name="selectOne" onChange={(event) => setSelectedOption(event.target.value)} className="mr-2" />
           <label for="html">No</label>
           </div>
         <label className="font-semibold ml-7">Please explain the reason</label>
